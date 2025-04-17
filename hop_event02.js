@@ -25,6 +25,24 @@ document.addEventListener("DOMContentLoaded", function() {
         
     }
 
+    //brightness
+    const sliderBrightness = document.querySelector('#sliderBrightness');
+    const numBrightness = document.querySelector('#numBrightness');
+    sliderBrightness.addEventListener('input', function(){
+       filterConfig = 'brightness(' + sliderBrightness.value + '%)';
+       theImg.style.filter = filterConfig;
+       numBrightness.textContent = sliderBrightness.value;
+    });
+
+
+    //grayscale
+    const sliderGray = document.querySelector('#sliderGray');
+    const numGray = document.querySelector('#numGray');
+    sliderGray.addEventListener('input', function(){
+       filterConfig = 'grayscale(' + sliderGray.value + '%)';
+       theImg.style.filter = filterConfig;
+       numGray.textContent = sliderGray.value;
+    });
 
 
 });
