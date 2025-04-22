@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
         
     }
 
-    //brightness
+
+  /* //brightness
     const sliderBrightness = document.querySelector('#sliderBrightness');
     const numBrightness = document.querySelector('#numBrightness');
     sliderBrightness.addEventListener('input', function(){
@@ -43,6 +44,46 @@ document.addEventListener("DOMContentLoaded", function() {
        theImg.style.filter = filterConfig;
        numGray.textContent = sliderGray.value;
     });
+    */
 
+    
+    //parent
+    const sliderBox = document.querySelector('#sliderBox');
+    //opacity
+    const sliderOpacity = document.querySelector('#sliderOpacity');
+    const numOpacity = document.querySelector('#numOpacity');
+    //saturation
+    const sliderSaturation = document.querySelector('#sliderSaturation');
+    const numSaturation = document.querySelector('#numSaturation');
+    //brightness
+    const sliderBrightness = document.querySelector('#sliderBrightness');
+    const numBrightness = document.querySelector('#numBrightness');
+    //hue-rotate
+    const sliderHue = document.querySelector('#sliderHue');
+    const numHue = document.querySelector('#numHue');
+    //grayscale
+    const sliderGray = document.querySelector('#sliderGray');
+    const numGray = document.querySelector('#numGray');
+    //blur
+    const sliderBlur = document.querySelector('#sliderBlur');
+    const numBlur = document.querySelector('#numBlur');
 
+    sliderBox.addEventListener('change', function(){
+        filterConfig = 'opacity(' + sliderOpacity.value + '%)'
+                       + 'saturate(' + sliderSaturation.value + '%)'
+                       +'brightness(' + sliderBrightness.value + '%)'
+                       + 'hue-rotate(' + sliderHue.value + 'deg)'
+                       + 'grayscale(' + sliderGray.value + '%)'
+                       + 'blur(' + sliderBlur.value + 'px)';
+
+        theImg.style.filter = filterConfig;
+        //update numbers
+        numOpacity.textContent = sliderOpacity.value;
+        numSaturation.textContent = sliderSaturation.value;
+        numBrightness.textContent = sliderBrightness.value;
+        numHue.textContent = sliderHue.value;
+        numGray.textContent = sliderGray.value;
+        numBlur.textContent = sliderBlur.value;
+    });
+   
 });
